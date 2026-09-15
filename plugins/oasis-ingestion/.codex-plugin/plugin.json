@@ -1,0 +1,37 @@
+{
+  "name": "oasis-ingestion",
+  "version": "0.1.0",
+  "description": "Prepare, validate, review, and explicitly hand off protected evidence imports to an existing Elephant service.",
+  "author": {
+    "name": "UT REAL Project MAPLES",
+    "url": "https://ut-real-ai-project-maples.com/"
+  },
+  "homepage": "https://github.com/JamiesonLabUTSW/maples-toolkit/tree/main/plugins/oasis-ingestion",
+  "repository": "https://github.com/JamiesonLabUTSW/maples-toolkit",
+  "license": "LicenseRef-UTSW-Academic-Research-Only",
+  "keywords": [
+    "codex",
+    "elephant",
+    "ingestion",
+    "medical-education",
+    "oasis"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OASIS Ingestion",
+    "shortDescription": "Review and import evidence into Elephant",
+    "longDescription": "A guarded ingestion workflow for inventorying selected evidence, resolving mappings with the data owner, generating and validating Elephant CSV manifests, configuring a private client runtime, and importing only after review and explicit confirmation.",
+    "developerName": "UT REAL Project MAPLES",
+    "category": "Education",
+    "websiteURL": "https://ut-real-ai-project-maples.com/",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Prepare this data package for reviewed OASIS ingestion.",
+      "Validate this Elephant import manifest offline.",
+      "Configure and check an existing Elephant target."
+    ]
+  }
+}

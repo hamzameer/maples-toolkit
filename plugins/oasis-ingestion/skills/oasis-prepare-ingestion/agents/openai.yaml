@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare OASIS Ingestion"
+  short_description: "Prepare and validate Elephant import packages"
+  default_prompt: "Use $oasis-prepare-ingestion to prepare a reviewed CSV and offline validation report for my selected input directory."

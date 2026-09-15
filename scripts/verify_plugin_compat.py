@@ -12,6 +12,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PLUGINS_DIR = REPO_ROOT / "plugins"
 RUBRIC_PLUGIN_ROOT = PLUGINS_DIR / "rubric-maker-skill"
+OASIS_PLUGIN_ROOT = PLUGINS_DIR / "oasis-ingestion"
 EXPECTED_PLUGINS = {
     "rubric-maker-skill": {
         "codex_installation": "AVAILABLE",
@@ -25,8 +26,12 @@ EXPECTED_PLUGINS = {
         "codex_installation": "NOT_AVAILABLE",
         "description": "Placeholder for future validation analysis workflows and skills.",
     },
+    "oasis-ingestion": {
+        "codex_installation": "AVAILABLE",
+        "description": "Prepare, validate, review, and explicitly hand off protected evidence imports to an existing Elephant service.",
+    },
 }
-CLAUDE_MARKETPLACE_PLUGINS = {"rubric-maker-skill"}
+CLAUDE_MARKETPLACE_PLUGINS = {"oasis-ingestion", "rubric-maker-skill"}
 EXPECTED_AUTHOR = {
     "name": "UT REAL Project MAPLES",
     "url": "https://ut-real-ai-project-maples.com/",
@@ -152,7 +157,12 @@ def validate_claude_marketplace(errors: list[str]) -> None:
             errors.append(f"{rel(path)} entry {plugin_name} author drifted")
         if entry.get("category") != "education":
             errors.append(f"{rel(path)} entry {plugin_name} category must be education")
-        if entry.get("homepage") != EXPECTED_AUTHOR["url"]:
+        expected_homepage = (
+            "https://github.com/JamiesonLabUTSW/maples-toolkit/tree/main/plugins/oasis-ingestion"
+            if plugin_name == "oasis-ingestion"
+            else EXPECTED_AUTHOR["url"]
+        )
+        if entry.get("homepage") != expected_homepage:
             errors.append(f"{rel(path)} entry {plugin_name} homepage drifted")
         if "version" in entry:
             errors.append(
@@ -174,12 +184,16 @@ def validate_manifest_alignment(errors: list[str]) -> None:
             )
 
 
-def run_rubric_plugin_check() -> int:
-    return subprocess.run(
-        [sys.executable, str(RUBRIC_PLUGIN_ROOT / "scripts" / "verify_plugin_compat.py")],
-        cwd=RUBRIC_PLUGIN_ROOT,
-        check=False,
-    ).returncode
+def run_plugin_checks() -> int:
+    checks = (
+        (RUBRIC_PLUGIN_ROOT, RUBRIC_PLUGIN_ROOT / "scripts" / "verify_plugin_compat.py"),
+        (OASIS_PLUGIN_ROOT, OASIS_PLUGIN_ROOT / "scripts" / "smoke_test.py"),
+    )
+    for plugin_root, script in checks:
+        status = subprocess.run([sys.executable, str(script)], cwd=plugin_root, check=False)
+        if status.returncode:
+            return status.returncode
+    return 0
 
 
 def main() -> int:
@@ -193,7 +207,7 @@ def main() -> int:
             print(f"ERROR {error}", file=sys.stderr)
         return 1
 
-    nested_status = run_rubric_plugin_check()
+    nested_status = run_plugin_checks()
     if nested_status != 0:
         return nested_status
 

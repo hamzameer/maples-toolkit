@@ -1,0 +1,2 @@
+# Preserve the exact provenance-pinned upstream license bytes in the importer bundle.
+plugins/oasis-ingestion/skills/oasis-prepare-ingestion/runtime/source/elephant/elephant-sdk/LICENSE whitespace=-blank-at-eol

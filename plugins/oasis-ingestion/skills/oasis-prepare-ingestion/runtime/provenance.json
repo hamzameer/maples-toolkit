@@ -1,0 +1,70 @@
+{
+  "repository": "JamiesonLabUTSW/oasis-internal",
+  "commit": "701e1a6210aeda51af1ebfb94148d28cf2843c5e",
+  "sdk_version": "3.1.1",
+  "source_files": [
+    {
+      "source_path": "scripts/load-data.py",
+      "package_path": "runtime/load-data.py",
+      "sha256": "0140031d0c2b09c5e178997168e9257b6406a3d8dd33b1b37c39bb2ee7e25d97"
+    },
+    {
+      "source_path": "LICENSE",
+      "package_path": "runtime/source/LICENSE",
+      "sha256": "82d55c07a6d092421ed3e7f7e02fee3636c507ab413085d8db54b7b3fab18b91"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/pyproject.toml",
+      "package_path": "runtime/source/elephant/elephant-sdk/pyproject.toml",
+      "sha256": "98c5e0c18ed523ecb69eba67aeaafb807c7b2e42f2dc68f8cc25cb905066a11a"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/uv.lock",
+      "package_path": "runtime/source/elephant/elephant-sdk/uv.lock",
+      "sha256": "224475b81167fd76245a883d12238faaec82bba9663feb062c8594cf27ebd810"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/LICENSE",
+      "package_path": "runtime/source/elephant/elephant-sdk/LICENSE",
+      "sha256": "f1d331a809a1f3135e017882d40b0bf3c8f68c58d5e1f00867f3af339c1d7bb8"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/__init__.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/__init__.py",
+      "sha256": "e5cb9eebc4a751dee813c4a0ce83c5968d6039f089f6b91c17146181cbded7df"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/client.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/client.py",
+      "sha256": "a3ba9ef17bd2b0ef994888a83159e15a581b5e04c30929b520768636ea937122"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/exceptions.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/exceptions.py",
+      "sha256": "6131ceec79547ec6f27f290c8cdfedcd3c8c70b88cdaf68bef61b19a06e620e4"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/helpers.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/helpers.py",
+      "sha256": "83f03b42fc733ea39d83e0705c796ecf32d1078b498669c48f50194c8abc915d"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/models.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/models.py",
+      "sha256": "8f01de12fb6b964c59eda19cf0751c0353d8e8106203eabdc51b50a930c3b1a6"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/py.typed",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "elephant/elephant-sdk/src/elephant/utils.py",
+      "package_path": "runtime/source/elephant/elephant-sdk/src/elephant/utils.py",
+      "sha256": "0fff5f8a4f655ea17c4942e2eec5c38e57c39e9b2536249eb204f1d1b1acdc13"
+    }
+  ],
+  "dependency_lock_source": "elephant/elephant-sdk/uv.lock",
+  "dependency_export": "uv export --frozen --no-dev --no-emit-project --format requirements-txt",
+  "scope": "Private engineering client bundle; not a public release or server deployment"
+}

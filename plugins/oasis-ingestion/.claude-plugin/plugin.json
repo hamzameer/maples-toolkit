@@ -1,0 +1,19 @@
+{
+  "name": "oasis-ingestion",
+  "version": "0.1.0",
+  "description": "Prepare, validate, review, and explicitly hand off protected evidence imports to an existing Elephant service.",
+  "author": {
+    "name": "UT REAL Project MAPLES",
+    "url": "https://ut-real-ai-project-maples.com/"
+  },
+  "homepage": "https://github.com/JamiesonLabUTSW/maples-toolkit/tree/main/plugins/oasis-ingestion",
+  "repository": "https://github.com/JamiesonLabUTSW/maples-toolkit",
+  "license": "LicenseRef-UTSW-Academic-Research-Only",
+  "keywords": [
+    "claude-code",
+    "elephant",
+    "ingestion",
+    "medical-education",
+    "oasis"
+  ]
+}

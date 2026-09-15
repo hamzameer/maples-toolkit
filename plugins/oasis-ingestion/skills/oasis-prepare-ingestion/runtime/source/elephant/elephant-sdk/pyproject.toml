@@ -1,0 +1,125 @@
+[build-system]
+requires = ["hatchling", "wheel"]
+build-backend = "hatchling.build"
+
+[project]
+name = "elephant-sdk"
+version = "3.1.1"
+description = "Nice tools for interacting with the elephant API"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Elephant maintainers" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: Free For Educational Use",
+    "License :: Free for non-commercial use",
+]
+
+dependencies = ["pydantic>=2.8", "requests>=2.34.2", "pydantic[email]>=2.11.7"]
+
+[project.optional-dependencies]
+dev = [
+    "bandit>=1.8.6",
+    "datamodel-code-generator[http]>=0.64.0",
+    "pip-audit==2.10.1",
+    "ruff>=0.12.8",
+    "types-requests>=2.32.4.20250809",
+]
+test = ["pytest>=9.0.3"]
+notebooks = ["jupyter>=1.1.1"]
+build = ["hatchling>=1.27.0", "twine>=6.1.0"]
+integration = [
+    "psycopg>=3.2.10",
+    "pydantic[email]>=2.11.7",
+    "testcontainers>=4.13.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/elephant"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/elephant/py.typed" = "elephant/py.typed"
+# [tool.setuptools.packages.find]
+# where = ["src"]
+
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+
+# Documentation for selected linting rules:
+# Ruff combines many linters into one. Below, we select the specific rule sets
+# that Ruff will enforce. Each set addresses different aspects of code quality
+# and potential issues.
+#
+# Rule sets explained:
+#   - E (Pyflakes errors): Common Python programming errors.
+#   - F (Pyflakes F-strings): Issues specific to f-strings.
+#   - I (Isort): Checks for correctly sorted imports.
+#   - B (Bugbear): Catches common design flaws and potential bugs.
+#   - UP (Pyupgrade): Suggests modern Python syntax (e.g., f-strings over .format()).
+#   - SIM (Simpler): Identifies opportunities to simplify code.
+#   - PL (Pylint): General code quality and style checks.
+#   - N (Pep8 Naming): Enforces PEP8 naming conventions.
+#   - RUF (Ruff-specific rules): Rules implemented directly by Ruff.
+#   - W (Flake8 Warnings): General warnings about code style and potential issues.
+#   - S (Safety): Checks for security vulnerabilities in dependencies.
+#
+# For a comprehensive list of rules and their explanations, refer to the
+# official Ruff documentation: https://docs.astral.sh/ruff/rules/
+lint.select = ["E", "F", "I", "B", "UP", "SIM", "PL", "N", "RUF", "W", "S"]
+lint.ignore = [
+    "E501",
+    "UP045",
+    "UP006",
+    "UP035",
+    "UP007",
+] # Opinionated, We have wide screen monitors
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[tool.ruff.lint.pylint]
+max-args = 8
+max-branches = 12
+max-locals = 20
+max-returns = 8
+max-statements = 50
+max-public-methods = 25
+max-bool-expr = 5
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["B017", "S101", "PLR2004", "S106", "SIM115", "S607"]
+
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+markers = [
+    "integration: marks tests that spin up the dockerized Elephant stack",
+]
+
+[tool.ty.environment]
+python-version = "3.10"
+
+
+[dependency-groups]
+dev = [
+    "bandit>=1.8.6",
+    "datamodel-code-generator[http]>=0.64.0",
+    "hatchling>=1.27.0",
+    "pip-audit==2.10.1",
+    "psycopg>=3.2.10",
+    "pytest>=9.0.3",
+    "ruff>=0.12.8",
+    "testcontainers>=4.13.0",
+    "twine>=6.1.0",
+    "ty>=0.0.44",
+    "types-requests>=2.32.4.20250809",
+]

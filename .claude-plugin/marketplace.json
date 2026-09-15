@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "ut-real-project-maples",
   "description": "Codex CLI and Claude Code plugins from the UT REAL Project MAPLES research group.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "owner": {
     "name": "UT REAL Project MAPLES"
   },
@@ -21,6 +21,23 @@
         "rubrics",
         "osce",
         "medical-education"
+      ]
+    },
+    {
+      "name": "oasis-ingestion",
+      "source": "./plugins/oasis-ingestion",
+      "description": "Prepare, validate, review, and explicitly hand off protected evidence imports to an existing Elephant service.",
+      "author": {
+        "name": "UT REAL Project MAPLES",
+        "url": "https://ut-real-ai-project-maples.com/"
+      },
+      "category": "education",
+      "homepage": "https://github.com/JamiesonLabUTSW/maples-toolkit/tree/main/plugins/oasis-ingestion",
+      "keywords": [
+        "elephant",
+        "ingestion",
+        "medical-education",
+        "oasis"
       ]
     }
   ]

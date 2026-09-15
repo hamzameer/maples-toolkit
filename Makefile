@@ -3,7 +3,7 @@ SHELL := /bin/bash
 PYTHON ?= python3
 VENV ?= .venv
 VENV_BIN := $(VENV)/bin
-PYTHON_PATHS := scripts plugins/rubric-maker-skill/scripts plugins/rubric-maker-skill/skills
+PYTHON_PATHS := scripts plugins/rubric-maker-skill/scripts plugins/rubric-maker-skill/skills plugins/oasis-ingestion/scripts
 MARKDOWN_FIND := find . \( -path ./.git -o -path ./.copilot-tracking -o -path ./.ruff_cache -o -path ./.venv -o -path ./venv -o -path ./build -o -path ./dist \) -prune -o -type f -name '*.md' -print0
 
 RUFF ?= $(shell if [ -x "$(VENV_BIN)/ruff" ]; then printf "$(VENV_BIN)/ruff"; else command -v ruff 2>/dev/null || printf ruff; fi)

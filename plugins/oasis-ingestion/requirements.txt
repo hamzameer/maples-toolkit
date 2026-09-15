@@ -1,0 +1,3 @@
+# No plugin-wide Python packages are installed at plugin installation time.
+# The skill's setup_importer.py creates a private environment from its hash-locked
+# runtime/requirements.lock only when an approved live Elephant import requires it.

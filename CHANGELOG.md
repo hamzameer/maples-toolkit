@@ -20,6 +20,35 @@ Versioning.
 
 ### Security
 
+## [0.2.0] - 2026-09-15
+
+### Added
+
+- Added the installable `oasis-ingestion` plugin to the Codex and Claude Code
+  marketplaces.
+
+### Changed
+
+- Updated marketplace documentation and validation for two available plugin release
+  units.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+### Security
+
+- Added marketplace distribution for a guarded ingestion plugin that keeps credentials
+  and protected data outside repository metadata.
+
 ## [0.1.0] - 2026-05-24
 
 ### Added
@@ -63,5 +92,6 @@ Versioning.
 - Added packaging hygiene checks for generated archives, OS metadata, caches, local
   environments, logs, and generated output directories.
 
-[unreleased]: https://github.com/JamiesonLabUTSW/maples-toolkit/compare/marketplace/v0.1.0...HEAD
+[unreleased]: https://github.com/JamiesonLabUTSW/maples-toolkit/compare/marketplace/v0.2.0...HEAD
 [0.1.0]: https://github.com/JamiesonLabUTSW/maples-toolkit/releases/tag/marketplace/v0.1.0
+[0.2.0]: https://github.com/JamiesonLabUTSW/maples-toolkit/releases/tag/marketplace/v0.2.0

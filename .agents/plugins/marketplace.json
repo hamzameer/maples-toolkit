@@ -39,6 +39,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Education"
+    },
+    {
+      "name": "oasis-ingestion",
+      "source": {
+        "source": "local",
+        "path": "./plugins/oasis-ingestion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
     }
   ]
 }
