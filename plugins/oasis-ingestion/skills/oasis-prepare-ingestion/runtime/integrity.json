@@ -15,7 +15,7 @@
   "runtime/source/elephant/elephant-sdk/src/elephant/utils.py": "0fff5f8a4f655ea17c4942e2eec5c38e57c39e9b2536249eb204f1d1b1acdc13",
   "runtime/source/elephant/elephant-sdk/uv.lock": "224475b81167fd76245a883d12238faaec82bba9663feb062c8594cf27ebd810",
   "scripts/render_review.py": "acf2bdbd198c0aaaa4be9cc2775856e4f81a27782cd0a2df05e833f088661f5f",
-  "scripts/run_import.py": "e51cd8965a4fa6368725ea2e0917bd1b90e1d58dcd81ae4e9b74331ebfb8bbef",
+  "scripts/run_import.py": "6d5c584b367e1aa099c66ec4197a94c196c0242c51207b6f93a7f2a1c09e3c30",
   "scripts/runtime_common.py": "04ebeff83d3002df90522694396bb9ff379cb485be1c65bd73423eb94f7ea5ca",
   "scripts/setup_importer.py": "ee79572ffe971138054a91b3168357560f2cb1a06b2215088ac929ba8af9f1d0",
   "scripts/validate_manifest.py": "15b36f05ec87afd0f4d2e3176ec12f1abf072ebb16c81b4422afc0ec588a2b89"

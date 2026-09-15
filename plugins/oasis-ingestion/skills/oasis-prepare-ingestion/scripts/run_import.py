@@ -3,6 +3,7 @@
 
 import argparse
 import contextlib
+import importlib
 import io
 import json
 import os
@@ -67,7 +68,9 @@ def read_config(path, windows_acl_verified=False):
 
 
 def restrict_requests(base_url):
-    import requests
+    # requests is intentionally available only in the separately installed importer
+    # environment, not in the marketplace repository's developer environment.
+    requests = importlib.import_module("requests")
 
     original = requests.Session.request
 
@@ -89,7 +92,8 @@ def restrict_requests(base_url):
             raise requests.RequestException("Redirect blocked")
         return result
 
-    requests.Session.request = bounded  # ty: ignore[invalid-assignment]
+    # Runtime-only dependency; setattr keeps repository type checks independent of it.
+    setattr(requests.Session, "request", bounded)  # noqa: B010
 
 
 class RedactedLog(io.TextIOBase):
