@@ -42,7 +42,8 @@ Versioning.
 
 ### Fixed
 
-- Nothing.
+- Expanded root CI coverage to lint and format-check the OASIS ingestion skill scripts
+  and tests and type-check both surfaces.
 
 ### Security
 

@@ -45,6 +45,9 @@ include = [
     "scripts",
     "plugins/rubric-maker-skill/scripts",
     "plugins/rubric-maker-skill/skills",
+    "plugins/oasis-ingestion/scripts",
+    "plugins/oasis-ingestion/skills/oasis-prepare-ingestion/scripts",
+    "plugins/oasis-ingestion/skills/oasis-prepare-ingestion/tests",
 ]
 exclude = [
     ".copilot-tracking",

@@ -46,7 +46,11 @@ Versioning.
 
 ### Fixed
 
-- Nothing.
+- Clarified that product-source paths in the skill refer to an optional, separate OASIS
+  checkout and are not missing plugin files.
+- Added the maintained skill scripts and tests to repository lint/type-check coverage;
+  unchanged provenance-pinned upstream importer and SDK source remain integrity-checked
+  instead of reformatted.
 
 ### Security
 

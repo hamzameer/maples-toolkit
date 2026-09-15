@@ -55,7 +55,10 @@ The runtime provenance pins the importer and SDK to OASIS commit
 `701e1a6210aeda51af1ebfb94148d28cf2843c5e`. It is a private engineering client bundle,
 not an OASIS release or Elephant server installer.
 The dependency setup uses the public package index for hash-locked binary wheels; it is
-not fully offline.
+not fully offline. References in the skill to `scripts/load-data.py` and
+`docs/elephant-maples-data-interop.md` mean paths in an optional, separate OASIS source
+checkout. The plugin's default importer is the provenance-pinned copy under
+`skills/oasis-prepare-ingestion/runtime/`; no OASIS checkout is required.
 
 ## Prerequisites and security boundary
 

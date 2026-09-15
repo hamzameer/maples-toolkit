@@ -50,10 +50,12 @@ Read [the CSV contract](references/csv-contract.md) and
 [portable runtime](references/portable-runtime.md).
 The bundle includes the importer and SDK from `runtime/provenance.json`; use those
 together by default.
-If a source checkout or installed command is available, verify it against
-`scripts/load-data.py`, the SDK's file types, and
+If a separate OASIS source checkout or installed command is available, verify it against
+that checkout's `scripts/load-data.py`, SDK file-type registry, and
 `docs/elephant-maples-data-interop.md`; record the revision.
-Resolve contract drift before generating real imports.
+Those product-source paths are not plugin-relative.
+Without a separate checkout, use the importer, SDK, and exact source provenance bundled
+under `runtime/`. Resolve contract drift before generating real imports.
 
 1. Preserve the as-received package and record its SHA-256 in the protected run record.
    Independent ZIP downloads can differ in container metadata; distinguish archive
